@@ -1,0 +1,128 @@
+{
+  "name": "Kerem Kale",
+  "role": "Senior Fullstack Developer / IT-Consultant",
+  "tagline": "Ich baue robuste Webplattformen mit PHP, JavaScript und moderner Infrastruktur.",
+  "location": "Wiesbaden, Deutschland",
+  "portrait": "/src/assets/images/kerem-portrait.jpeg",
+  "socials": [
+    {
+      "label": "GitHub",
+      "href": "https://github.com/caravaggio06"
+    },
+    {
+      "label": "E-Mail",
+      "href": "mailto:kerem.kale@hotmail.de"
+    }
+  ],
+  "skills": [
+    "PHP 8.3+",
+    "Laravel 12",
+    "Symfony",
+    "Drupal 6–11",
+    "TYPO3 v12",
+    "React",
+    "React Native",
+    "Vue",
+    "Angular",
+    "Tailwind CSS",
+    "SCSS",
+    "Docker",
+    "DDEV",
+    "Proxmox",
+    "GitHub Actions",
+    "GitLab CI/CD",
+    "MySQL/MariaDB",
+    "REST APIs",
+    "OAuth2 / JWT"
+  ],
+  "projects": [
+    {
+      "title": "MyFightingStyle – Kampfsport Analyse-App",
+      "desc": "React Native + Expo App mit Analyse-Engine, Radar-Charts und personalisierten Trainingstipps für Kampfsportler.",
+      "tags": [
+        "React Native",
+        "Expo",
+        "TypeScript",
+        "AsyncStorage",
+        "Data Visualization"
+      ],
+      "link": "#",
+      "image": "/images/myfightingstyle.jpg"
+    },
+    {
+      "title": "MatchMakingApp – Fighter/Promoter Plattform",
+      "desc": "Laravel-Webplattform mit Rollenmodell, Events, Bewerbungen und Stripe-Paywall für Fighter und Promoter.",
+      "tags": [
+        "Laravel 12",
+        "Tailwind",
+        "Stripe Checkout",
+        "Webhooks",
+        "Multi-Role"
+      ],
+      "link": "#",
+      "image": "/images/matchmakingapp.jpg"
+    },
+    {
+      "title": "K•Core CMS – Headless-first Laravel CMS",
+      "desc": "Eigenes CMS mit Content-Types, Nodes, Blocks, Menüs, Rollen und API, Basis für weitere Produkte.",
+      "tags": [
+        "Laravel",
+        "Headless CMS",
+        "Sanctum",
+        "Spatie Roles",
+        "API"
+      ],
+      "link": "#",
+      "image": "/images/kcore.jpg"
+    },
+    {
+      "title": "Dr. Merz – merz-preise Micro-Site",
+      "desc": "Leichtgewichtiges Laravel-Setup mit Preis-Konfigurator, Lead-Formular und WhatsApp/Online-Termin Deep-Links.",
+      "tags": [
+        "Laravel",
+        "Tailwind",
+        "Alpine.js",
+        "Lead-Gen",
+        "DDEV"
+      ],
+      "link": "#",
+      "image": "/images/merz-preise.jpg"
+    }
+  ],
+  "experience": [
+    {
+      "when": "2024 – heute",
+      "title": "Systemadministrator",
+      "org": "Hochschule Darmstadt",
+      "desc": "Verantwortlich für TYPO3 v12, Linux-Server, Proxmox und Docker/DDEV-Infrastruktur."
+    },
+    {
+      "when": "2020 – 2023",
+      "title": "Frontend Entwickler",
+      "org": "Jung, DMS & Cie. AG",
+      "desc": "Enterprise-Frontend mit Symfony, Angular und CI/CD-Pipelines auf GitLab."
+    },
+    {
+      "when": "2019 – 2020",
+      "title": "Projektleiter / Frontend Developer",
+      "org": "UDG – Telekom E-Mail Center",
+      "desc": "UX/UI-Implementierung, Angular-Frontend, SCSS und Testing im Telekom E-Mail Center."
+    },
+    {
+      "when": "2017 – 2019",
+      "title": "Fullstack Projektleiter",
+      "org": "3st Digital GmbH",
+      "desc": "Drupal-Projekte für Kunden wie ZDF, Weisser Ring, Puma und ZDF Shop verantwortet."
+    },
+    {
+      "when": "2016 – 2017",
+      "title": "Backend Entwickler / IT-Leiter",
+      "org": "Questax GmbH",
+      "desc": "PHP-Backend, MySQL, Serverbetrieb und CRM-Weiterentwicklung."
+    }
+  ],
+  "contact": {
+    "email": "kerem.kale@hotmail.de",
+    "phone": "+49 176 72183329"
+  }
+}

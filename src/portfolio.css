@@ -1,0 +1,70 @@
+/* src/portfolio.css */
+
+/* Globale Deko, die nicht direkt aus Tailwind kommt */
+.glow-orb-top {
+  position: absolute;
+  top: -10rem;
+  left: -10rem;
+  width: 20rem;
+  height: 20rem;
+  border-radius: 9999px;
+  background: radial-gradient(circle, rgba(234, 179, 8, 0.35), transparent 70%);
+  filter: blur(40px);
+  pointer-events: none;
+}
+
+.glow-orb-bottom {
+  position: absolute;
+  bottom: -12rem;
+  right: -12rem;
+  width: 22rem;
+  height: 22rem;
+  border-radius: 9999px;
+  background: radial-gradient(circle, rgba(16, 185, 129, 0.2), transparent 70%);
+  filter: blur(42px);
+  pointer-events: none;
+}
+
+/* Card-Grundstil (Glassmorphism) */
+.card-glass {
+  border-radius: 1.5rem;
+  border: 1px solid rgba(30, 64, 175, 0.55);
+  background: radial-gradient(circle at top left, rgba(15, 23, 42, 0.95), rgba(2, 6, 23, 0.9));
+  box-shadow:
+    0 18px 40px rgba(0, 0, 0, 0.65),
+    0 0 0 1px rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  transition:
+    transform 0.18s ease-out,
+    border-color 0.18s ease-out,
+    box-shadow 0.18s ease-out;
+}
+
+.card-glass:hover {
+  transform: translateY(-3px);
+  border-color: rgba(234, 179, 8, 0.75);
+  box-shadow:
+    0 22px 50px rgba(0, 0, 0, 0.8),
+    0 0 0 1px rgba(30, 64, 175, 0.9);
+}
+
+/* Tag/Pill-Styling */
+.tag-pill {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 9999px;
+  border: 1px solid rgba(51, 65, 85, 0.9);
+  background: linear-gradient(to right, rgba(15, 23, 42, 0.96), rgba(15, 23, 42, 0.85));
+  padding: 0.15rem 0.6rem;
+  font-size: 11px;
+  font-weight: 500;
+  color: rgb(226, 232, 240);
+}
+
+/* Für sehr kleine Screens minimal mehr Innenabstand */
+@media (max-width: 480px) {
+  .card-glass {
+    border-radius: 1.25rem;
+  }
+}
