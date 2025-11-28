@@ -1,33 +1,41 @@
 import React from 'react';
 
-const links = [
-  { href: '#projects', label: 'Projekte' },
-  { href: '#skills', label: 'Skills' },
-  { href: '#experience', label: 'Erfahrung' },
-  { href: '#contact', label: 'Kontakt' }
-];
+import { useTheme } from "../theme/ThemeContext";
 
-function Navbar({ name }) {
+export default function Navbar() {
+  const { mode, toggle } = useTheme();
+
   return (
-    <header className="fixed inset-x-0 top-0 z-20 border-b border-slate-800/80 bg-slate-950/80 backdrop-blur">
-      <nav className="mx-auto flex max-w-5xl items-center justify-between px-4 py-3 md:px-6 lg:px-0">
-        <a href="#top" className="text-sm font-semibold tracking-wide text-gold-400">
-          {name}
-        </a>
-        <div className="flex items-center gap-6 text-xs font-medium text-slate-200">
-          {links.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              className="transition-colors hover:text-gold-400"
-            >
-              {link.label}
-            </a>
-          ))}
+    <header className="mb-8">
+      <nav className="flex items-center justify-between gap-4">
+        <div className="font-semibold tracking-tight">
+          Kerem Kale
+        </div>
+
+        <div className="flex items-center gap-3 text-sm">
+          {/* deine bisherigen Nav-Links belassen */}
+          <a href="#projects" className="hover:text-yellow-300">
+            Projekte
+          </a>
+          <a href="#skills" className="hover:text-yellow-300">
+            Skills
+          </a>
+          <a href="#experience" className="hover:text-yellow-300">
+            Erfahrung
+          </a>
+          <a href="#contact" className="hover:text-yellow-300">
+            Kontakt
+          </a>
+
+          <button
+            type="button"
+            onClick={toggle}
+            className="ml-2 rounded-full border border-yellow-400 px-3 py-1 text-xs uppercase tracking-wide hover:bg-yellow-400/10"
+          >
+            {mode === "dark" ? "Light" : "Dark"}
+          </button>
         </div>
       </nav>
     </header>
   );
 }
-
-export default Navbar;

@@ -1,4 +1,3 @@
-import React from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
 import Button from '../components/Button.jsx';
 import Tag from '../components/Tag.jsx';

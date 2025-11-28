@@ -1,73 +1,44 @@
-import React from 'react';
-import { motion, useReducedMotion } from 'framer-motion';
-import Section from '../components/Section.jsx';
-import Card from '../components/Card.jsx';
-import Tag from '../components/Tag.jsx';
-import Button from '../components/Button.jsx';
+// src/sections/Projects.jsx
+import { useState } from "react";
+import Section from "../components/Section";
+import Card from "../components/Card";
 
-function Projects({ projects }) {
-  const shouldReduceMotion = useReducedMotion();
+export default function Projects({ projects = [] }) {
+  const [query, setQuery] = useState("");
 
-  const container = {
-    hidden: { opacity: 0 },
-    show: {
-      opacity: 1,
-      transition: {
-        staggerChildren: shouldReduceMotion ? 0 : 0.08
-      }
-    }
-  };
+  const normalizedQuery = query.trim().toLowerCase();
 
-  const item = {
-    hidden: { opacity: 0, y: shouldReduceMotion ? 0 : 16 },
-    show: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: shouldReduceMotion ? 0 : 0.25
-      }
-    }
-  };
+  const filtered = projects.filter((project) => {
+    if (!normalizedQuery) return true;
+    const haystack = (
+      project.title +
+      " " +
+      (project.desc || "") +
+      " " +
+      (project.tags || []).join(" ")
+    ).toLowerCase();
+
+    // direkte Nutzung von string.includes() wie im Auftrag
+    return haystack.includes(normalizedQuery);
+  });
 
   return (
-    <Section id="projects" eyebrow="Ausgewählte Arbeiten" title="Projekte">
-      <motion.div
-        variants={container}
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true, amount: 0.2 }}
-        className="grid gap-5 md:grid-cols-2"
-      >
-        {projects.map((project) => (
-          <motion.div key={project.title} variants={item}>
-            <Card>
-              {project.image && (
-                <div className="mb-4 overflow-hidden rounded-xl border border-slate-800/80 bg-slate-900">
-                  <div className="h-40 w-full bg-gradient-to-br from-slate-800 to-slate-900" />
-                </div>
-              )}
-              <h3 className="text-base font-semibold text-slate-50">
-                {project.title}
-              </h3>
-              <p className="mt-2 text-sm text-slate-300">{project.desc}</p>
-              <div className="mt-3 flex flex-wrap gap-2">
-                {project.tags?.map((tag) => (
-                  <Tag key={tag}>{tag}</Tag>
-                ))}
-              </div>
-              {project.link && project.link !== '#' && (
-                <div className="mt-4">
-                  <Button as="a" href={project.link} target="_blank" rel="noreferrer">
-                    Projekt öffnen
-                  </Button>
-                </div>
-              )}
-            </Card>
-          </motion.div>
+    <Section id="projects" title="Projekte">
+      <div className="mb-4">
+        <input
+          type="text"
+          placeholder="Projekte durchsuchen…"
+          value={query}
+          onChange={(e) => setQuery(e.target.value)}
+          className="w-full rounded-md bg-slate-900/70 border border-slate-700 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-yellow-400"
+        />
+      </div>
+
+      <div className="grid gap-4 md:grid-cols-2">
+        {filtered.map((project) => (
+          <Card key={project.title} project={project} />
         ))}
-      </motion.div>
+      </div>
     </Section>
   );
 }
-
-export default Projects;

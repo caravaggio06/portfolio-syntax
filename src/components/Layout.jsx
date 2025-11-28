@@ -1,18 +1,19 @@
 import React from 'react';
 
-function Layout({ children }) {
-  return (
-    <div className="relative min-h-screen bg-slate-950 text-slate-50">
-      <div className="pointer-events-none absolute inset-0">
-        <div className="glow-orb-top" />
-        <div className="glow-orb-bottom" />
-      </div>
+import { useTheme } from "../theme/ThemeContext";
 
-      <div className="relative z-10 flex min-h-screen flex-col">
+export default function Layout({ children }) {
+  const { theme } = useTheme();
+
+  return (
+    <div
+      className="min-h-screen text-slate-100 relative overflow-hidden"
+      style={{ background: theme.background, color: theme.textPrimary }}
+    >
+      {/* hier liegen deine Orbs / Hintergrund-Elemente */}
+      <div className="relative z-10 max-w-5xl mx-auto px-4 py-8 md:py-12">
         {children}
       </div>
     </div>
   );
 }
-
-export default Layout;
