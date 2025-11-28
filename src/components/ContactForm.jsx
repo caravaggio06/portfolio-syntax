@@ -7,7 +7,6 @@ const contactSchema = yup.object({
   name: yup.string().required("Bitte einen Namen eintragen."),
   email: yup
     .string()
-    .email("Bitte eine gültige E-Mail-Adresse eingeben.")
     .matches(/^[^\s@]+@[^\s@]+\.[^\s@]+$/, "Bitte eine gültige E-Mail-Adresse eingeben.")
     .min(5, "E-Mail muss mindestens 5 Zeichen haben.")
     .required("E-Mail ist erforderlich."),
